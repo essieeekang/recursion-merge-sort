@@ -5,5 +5,11 @@ from .mergelib import merge_sorted
 # already sorted lists in linear time and space
 # with respect to the combined lengths of the lists.
 
+
 def merge_sort(data):
-    pass
+    if len(data) < 2:
+        return data
+
+    middle = len(data) // 2
+
+    return merge_sorted(merge_sort(data[:middle]), merge_sort(data[middle:]))
